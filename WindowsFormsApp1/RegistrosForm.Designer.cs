@@ -37,6 +37,9 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.fullNameWarning = new System.Windows.Forms.Label();
+            this.emailWarning = new System.Windows.Forms.Label();
+            this.senhaWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fullName
@@ -48,21 +51,21 @@ namespace WindowsFormsApp1
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(29, 120);
+            this.email.Location = new System.Drawing.Point(29, 145);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(387, 20);
             this.email.TabIndex = 1;
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(29, 183);
+            this.password.Location = new System.Drawing.Point(29, 230);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(387, 20);
             this.password.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(319, 229);
+            this.button1.Location = new System.Drawing.Point(319, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 31);
             this.button1.TabIndex = 3;
@@ -72,7 +75,7 @@ namespace WindowsFormsApp1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(191, 229);
+            this.button2.Location = new System.Drawing.Point(191, 267);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 31);
             this.button2.TabIndex = 4;
@@ -83,7 +86,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 30);
+            this.label1.Location = new System.Drawing.Point(26, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 5;
@@ -93,7 +96,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 94);
+            this.label2.Location = new System.Drawing.Point(26, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 6;
@@ -102,17 +105,54 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 156);
+            this.label3.Location = new System.Drawing.Point(26, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Senha";
             // 
+            // fullNameWarning
+            // 
+            this.fullNameWarning.AutoSize = true;
+            this.fullNameWarning.ForeColor = System.Drawing.Color.Red;
+            this.fullNameWarning.Location = new System.Drawing.Point(26, 81);
+            this.fullNameWarning.Name = "fullNameWarning";
+            this.fullNameWarning.Size = new System.Drawing.Size(97, 13);
+            this.fullNameWarning.TabIndex = 8;
+            this.fullNameWarning.Text = "Preencha o campo";
+            this.fullNameWarning.Visible = false;
+            // 
+            // emailWarning
+            // 
+            this.emailWarning.AutoSize = true;
+            this.emailWarning.ForeColor = System.Drawing.Color.Red;
+            this.emailWarning.Location = new System.Drawing.Point(26, 168);
+            this.emailWarning.Name = "emailWarning";
+            this.emailWarning.Size = new System.Drawing.Size(97, 13);
+            this.emailWarning.TabIndex = 9;
+            this.emailWarning.Text = "Preencha o campo";
+            this.emailWarning.Visible = false;
+            // 
+            // senhaWarning
+            // 
+            this.senhaWarning.AutoSize = true;
+            this.senhaWarning.ForeColor = System.Drawing.Color.Red;
+            this.senhaWarning.Location = new System.Drawing.Point(26, 253);
+            this.senhaWarning.Name = "senhaWarning";
+            this.senhaWarning.Size = new System.Drawing.Size(97, 13);
+            this.senhaWarning.TabIndex = 10;
+            this.senhaWarning.Text = "Preencha o campo";
+            this.senhaWarning.Visible = false;
+            this.senhaWarning.Click += new System.EventHandler(this.label6_Click);
+            // 
             // RegistrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 283);
+            this.ClientSize = new System.Drawing.Size(450, 310);
+            this.Controls.Add(this.senhaWarning);
+            this.Controls.Add(this.emailWarning);
+            this.Controls.Add(this.fullNameWarning);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -138,6 +178,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label fullNameWarning;
+        private System.Windows.Forms.Label emailWarning;
+        private System.Windows.Forms.Label senhaWarning;
     }
 }
 

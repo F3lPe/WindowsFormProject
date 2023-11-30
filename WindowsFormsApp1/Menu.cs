@@ -17,19 +17,24 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button_registros(Object sander, EventArgs e)
+        private void button_registros(object sander, EventArgs e)
         {
             new Listagem().Show();
             this.Hide();
         }
-        private void button_criar(Object sander, EventArgs e)
+        private void button_criar(object sander, EventArgs e)
         {
             new RegistrosForm().Show();
             this.Hide();
         }
-        private void button_editar(Object sander, EventArgs e)
+        private void button_editar(object sander, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

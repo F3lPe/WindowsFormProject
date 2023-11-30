@@ -19,12 +19,26 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var listagem = new Listagem()
-            {
-              userValues = new List<string> {fullName.Text, email.Text, password.Text}
-            };
-            listagem.usuarios();        
+            if(fullName.Text == "" || password.Text == "" || email.Text == ""){
+                fullNameWarning.Visible = true;
+                senhaWarning.Visible = true;
+                emailWarning.Visible = true;
 
+            } else
+            {
+                fullNameWarning.Visible = false;
+                senhaWarning.Visible = false;
+                emailWarning.Visible = false;
+
+                int id = 0;
+                List<string> valoresUsuario = new List<string>();
+                Pessoa pessoa = new Pessoa { nome = fullName.Text, senha = password.Text, email = email.Text ,id = id++};
+                ArmazenamentoValores.ValoresCriados.Add(pessoa);
+
+                fullName.Text = "";
+                password.Text = "";
+                email.Text = "";
+            }            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +48,11 @@ namespace WindowsFormsApp1
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

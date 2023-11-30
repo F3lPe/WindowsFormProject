@@ -12,31 +12,52 @@ namespace WindowsFormsApp1
 {
     public partial class Listagem : Form
     {
-        public static List<string> userValues { get; set; }
-        public string usuarios()
-        {            
-            return userValues[0];
-        }
-
-        public string ValorDoTextBox
-        {
-            get { return textBox1.Text; }
-        }
         public Listagem()
         {
             InitializeComponent();
         }
-      
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        Label label = new Label();
+
+        public List<Pessoa> ListaPessoas = new List<Pessoa>();
+
+        public void usuarios()
         {
+            string email = ArmazenamentoValores.ValoresCriados.Find(e => e.id == 0).email;
+            label.Text = email;
+            tabelaRegistros.Controls.Add(label, 0, 1);
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            usuarios();
             
-            
+            // Coloque o código que deseja executar quando o formulário é carregado aqui
         }
 
         private void button_back(object sender, EventArgs e)
         {
             this.Hide();
             new Menu().Show();
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+                    }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

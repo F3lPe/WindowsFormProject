@@ -8,6 +8,6 @@ namespace WindowsFormsApp1
 {
     public static class ArmazenamentoValores
     {
-        public static List<string> ValoresCriados { get; } = new List<string>();
+        public static List<Pessoa> ValoresCriados { get; } = new List<Pessoa>();
     }
 }
