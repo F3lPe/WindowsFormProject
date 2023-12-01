@@ -16,22 +16,28 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        Label label = new Label();
+        Label labelNome = new Label();
+        Label labelSenha = new Label();
+        Label labelEmail = new Label();
 
         public List<Pessoa> ListaPessoas = new List<Pessoa>();
 
         public void usuarios()
         {
-            string email = ArmazenamentoValores.ValoresCriados.Find(e => e.id == 0).email;
-            label.Text = email;
-            tabelaRegistros.Controls.Add(label, 0, 1);
+            Pessoa usuario = ArmazenamentoValores.ValoresCriados.Find(e => e.id == 0);
+            labelNome.Text = usuario.nome;
+            labelSenha.Text = usuario.email;
+            labelEmail.Text = usuario.senha;
+            tabelaRegistros.Controls.Add(labelNome, 0, 1);
+            tabelaRegistros.Controls.Add(labelSenha, 1, 1);
+            tabelaRegistros.Controls.Add(labelEmail, 2, 1);
+
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            usuarios();
-            
+            usuarios();            
             // Coloque o código que deseja executar quando o formulário é carregado aqui
         }
 
@@ -43,7 +49,8 @@ namespace WindowsFormsApp1
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
-                    }
+        
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -56,6 +63,11 @@ namespace WindowsFormsApp1
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemove_click(object sender, EventArgs e)
         {
 
         }

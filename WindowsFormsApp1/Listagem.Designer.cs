@@ -31,16 +31,17 @@ namespace WindowsFormsApp1
         {
             this.btnBack = new System.Windows.Forms.Button();
             this.tabelaRegistros = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.tabelaRegistros.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
             // 
             this.btnBack.AutoSize = true;
-            this.btnBack.Location = new System.Drawing.Point(324, 257);
+            this.btnBack.Location = new System.Drawing.Point(74, 257);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
@@ -54,7 +55,7 @@ namespace WindowsFormsApp1
             this.tabelaRegistros.ColumnCount = 3;
             this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.73171F));
             this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.26829F));
-            this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tabelaRegistros.Controls.Add(this.label3, 2, 0);
             this.tabelaRegistros.Controls.Add(this.label2, 1, 0);
             this.tabelaRegistros.Controls.Add(this.label1, 0, 0);
@@ -67,6 +68,24 @@ namespace WindowsFormsApp1
             this.tabelaRegistros.Size = new System.Drawing.Size(305, 119);
             this.tabelaRegistros.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(205, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(106, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -76,23 +95,16 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // label2
+            // btnRemove
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(207, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.btnRemove.AutoSize = true;
+            this.btnRemove.Location = new System.Drawing.Point(297, 257);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 3;
+            this.btnRemove.Text = "Remover";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_click);
             // 
             // Listagem
             // 
@@ -100,6 +112,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(452, 292);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.tabelaRegistros);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -118,5 +131,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
