@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
         Label labelNome = new Label();
         Label labelSenha = new Label();
         Label labelEmail = new Label();
