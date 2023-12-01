@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -19,19 +20,19 @@ namespace WindowsFormsApp1
         Label labelNome = new Label();
         Label labelSenha = new Label();
         Label labelEmail = new Label();
+        Pessoa usuario;
 
         public List<Pessoa> ListaPessoas = new List<Pessoa>();
-
+        
         public void usuarios()
         {
-            Pessoa usuario = ArmazenamentoValores.ValoresCriados.Find(e => e.id == 0);
+            usuario = ArmazenamentoValores.ValoresCriados.Find(e => e.id == 0);
             labelNome.Text = usuario.nome;
             labelSenha.Text = usuario.email;
             labelEmail.Text = usuario.senha;
             tabelaRegistros.Controls.Add(labelNome, 0, 1);
             tabelaRegistros.Controls.Add(labelSenha, 1, 1);
             tabelaRegistros.Controls.Add(labelEmail, 2, 1);
-
         }
 
         protected override void OnLoad(EventArgs e)
@@ -69,7 +70,10 @@ namespace WindowsFormsApp1
 
         private void btnRemove_click(object sender, EventArgs e)
         {
-
+            int index = ArmazenamentoValores.ValoresCriados.FindIndex(item => item.id == 0);
+            Debug.WriteLine($"{index}");
+            ArmazenamentoValores.ValoresCriados.RemoveAt(index);
+            Console.ReadLine();             
         }
     }
 }
