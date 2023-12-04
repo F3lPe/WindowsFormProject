@@ -33,8 +33,8 @@ namespace WindowsFormsApp1
                 int id = 0;
                 List<string> valoresUsuario = new List<string>();
                 Pessoa pessoa = new Pessoa { nome = fullName.Text, senha = password.Text, email = email.Text ,id = id++};
-                ArmazenamentoValores.ValoresCriados.Add(pessoa);
-
+                Listagem.ListaPessoas.Add(pessoa);
+                    
                 fullName.Text = "";
                 password.Text = "";
                 email.Text = "";

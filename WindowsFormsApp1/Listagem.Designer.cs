@@ -30,18 +30,15 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.tabelaRegistros = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.tabelaRegistros.SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
             // 
             this.btnBack.AutoSize = true;
-            this.btnBack.Location = new System.Drawing.Point(74, 257);
+            this.btnBack.Location = new System.Drawing.Point(538, 309);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
@@ -49,56 +46,10 @@ namespace WindowsFormsApp1
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.button_back);
             // 
-            // tabelaRegistros
-            // 
-            this.tabelaRegistros.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tabelaRegistros.ColumnCount = 3;
-            this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.73171F));
-            this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.26829F));
-            this.tabelaRegistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tabelaRegistros.Controls.Add(this.label3, 2, 0);
-            this.tabelaRegistros.Controls.Add(this.label2, 1, 0);
-            this.tabelaRegistros.Controls.Add(this.label1, 0, 0);
-            this.tabelaRegistros.Location = new System.Drawing.Point(67, 76);
-            this.tabelaRegistros.Name = "tabelaRegistros";
-            this.tabelaRegistros.RowCount = 3;
-            this.tabelaRegistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.65766F));
-            this.tabelaRegistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.34234F));
-            this.tabelaRegistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tabelaRegistros.Size = new System.Drawing.Size(305, 119);
-            this.tabelaRegistros.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(106, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
             // btnRemove
             // 
             this.btnRemove.AutoSize = true;
-            this.btnRemove.Location = new System.Drawing.Point(297, 257);
+            this.btnRemove.Location = new System.Drawing.Point(639, 309);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 3;
@@ -106,20 +57,28 @@ namespace WindowsFormsApp1
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(163, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(450, 207);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Listagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(452, 292);
+            this.ClientSize = new System.Drawing.Size(726, 344);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.tabelaRegistros);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Listagem";
             this.Text = "Form1";
-            this.tabelaRegistros.ResumeLayout(false);
-            this.tabelaRegistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,10 +86,7 @@ namespace WindowsFormsApp1
 
         #endregion
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TableLayoutPanel tabelaRegistros;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
