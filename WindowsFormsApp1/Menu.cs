@@ -27,6 +27,12 @@ namespace WindowsFormsApp1
             new RegistrosForm().Show();
             this.Hide();
         }
+        private void button_gerenciador(object sender, EventArgs e)
+        {
+            new TaskManager().Show();
+            this.Hide();          
+        }
+
         private void button_editar(object sander, EventArgs e)
         {
 
@@ -36,5 +42,7 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+       
     }
 }

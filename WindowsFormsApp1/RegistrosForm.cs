@@ -31,10 +31,12 @@ namespace WindowsFormsApp1
                 emailWarning.Visible = false;
 
                 int id = 0;
+
                 List<string> valoresUsuario = new List<string>();
+                
                 Pessoa pessoa = new Pessoa { nome = fullName.Text, senha = password.Text, email = email.Text ,id = id++};
                 Listagem.ListaPessoas.Add(pessoa);
-                    
+
                 fullName.Text = "";
                 password.Text = "";
                 email.Text = "";
