@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -32,10 +31,11 @@ namespace WindowsFormsApp1
                 emailWarning.Visible = false;
 
                 int id = 0;
+
                 List<string> valoresUsuario = new List<string>();
-                Pessoa pessoa = new Pessoa { nome = fullName.Text, senha = password.Text, email = email.Text ,id = id++};
-                ArmazenamentoValores.ValoresCriados.Add(pessoa);
                 
+                Pessoa pessoa = new Pessoa { nome = fullName.Text, senha = password.Text, email = email.Text ,id = id++};
+                Listagem.ListaPessoas.Add(pessoa);
 
                 fullName.Text = "";
                 password.Text = "";

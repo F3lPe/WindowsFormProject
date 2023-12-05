@@ -62,6 +62,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskManager.Designer.cs">
+      <DependentUpon>TaskManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pessoa.cs" />
     <Compile Include="Storage.cs" />
     <Compile Include="Listagem.cs">
@@ -102,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TaskManager.resx">
+      <DependentUpon>TaskManager.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
