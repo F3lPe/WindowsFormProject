@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         public Menu()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void button_registros(object sander, EventArgs e)

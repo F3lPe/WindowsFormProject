@@ -15,7 +15,9 @@ namespace WindowsFormsApp1
         public Listagem()
         {
             InitializeComponent();
+            CenterToScreen();
         }
+        int indicie;
 
         public static List<Pessoa> ListaPessoas { get; } = new List<Pessoa> ();
 
@@ -26,13 +28,13 @@ namespace WindowsFormsApp1
         public void usuarios()
         {
             dataGridView1.DataSource = tableValues();
+            dataGridView1.CellClick += dataGridView1_CellContentClick;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             usuarios();            
-            // Coloque o código que deseja executar quando o formulário é carregado aqui
         }
 
         private void button_back(object sender, EventArgs e)
@@ -63,12 +65,23 @@ namespace WindowsFormsApp1
 
         private void btnRemove_click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                dataGridView1.Rows.RemoveAt(0);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linha para remover.");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int linhaClicada = e.RowIndex;
+            indicie = linhaClicada;
+            int colunaClicada = e.ColumnIndex;
+            MessageBox.Show($"linha: {linhaClicada} coluna: {colunaClicada} posicao: {indicie} rowIndex: {dataGridView1.SelectedCells[0].RowIndex}");
         }
     }
 }
