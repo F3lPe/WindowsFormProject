@@ -12,34 +12,52 @@ namespace WindowsFormsApp1
 {
     public partial class RegistrosForm : Form
     {
+        public string nome { get; set; }
+        public string senha { get; set; }
+        public string email { get; set; }
+        public bool edit { get; set; } = false;
         public RegistrosForm()
         {
             InitializeComponent();
             CenterToScreen();
         }
+        int id = 0;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(fullName.Text == "" || password.Text == "" || email.Text == ""){
-                fullNameWarning.Visible = true;
-                senhaWarning.Visible = true;
-                emailWarning.Visible = true;
-
-            } else
+            if (edit == false)
             {
-                fullNameWarning.Visible = false;
-                senhaWarning.Visible = false;
-                emailWarning.Visible = false;
+                if (txtfullName.Text == "" || txtPassword.Text == "" || txtEmail.Text == "")
+                {
+                    fullNameWarning.Visible = true;
+                    senhaWarning.Visible = true;
+                    emailWarning.Visible = true;
 
-                int id = 0;
-                
-                Pessoa pessoa = new Pessoa { nome = fullName.Text, senha = password.Text, email = email.Text ,id = id++};
-                Listagem.ListaPessoas.Add(pessoa);
+                }
+                else
+                {
+                    edit = false;
+                    fullNameWarning.Visible = false;
+                    senhaWarning.Visible = false;
+                    emailWarning.Visible = false;
 
-                fullName.Text = "";
-                password.Text = "";
-                email.Text = "";
-            }            
+                    Pessoa pessoa = new Pessoa { nome = txtfullName.Text, senha = txtPassword.Text, email = txtEmail.Text, id = id };
+                    Listagem.ListaPessoas.Add(pessoa);
+
+                    id += 1;
+                    txtfullName.Text = "";
+                    txtPassword.Text = "";
+                    txtEmail.Text = "";
+                }
+            }
+            else if (edit == true)
+            {
+                txtfullName.Text = nome;
+                txtPassword.Text = senha;
+                txtEmail.Text = email;
+                this.Hide();
+            }
+                      
         }
 
         private void button2_Click(object sender, EventArgs e)

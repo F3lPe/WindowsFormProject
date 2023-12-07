@@ -17,18 +17,19 @@ namespace WindowsFormsApp1
             InitializeComponent();
             CenterToScreen();
         }
-        int indicie;
+        int indicie = 0;
+        string nome, email, senha;
+
 
         public static List<Pessoa> ListaPessoas { get; } = new List<Pessoa> ();
-
-        private List<Pessoa> tableValues()
+        
+        public List<Pessoa> dataSource()
         {
             return Listagem.ListaPessoas;
         } 
         public void usuarios()
         {
-            dataGridView1.DataSource = tableValues();
-            dataGridView1.CellClick += dataGridView1_CellContentClick;
+            dataGridView1.DataSource = dataSource();
         }
 
         protected override void OnLoad(EventArgs e)
@@ -65,23 +66,54 @@ namespace WindowsFormsApp1
 
         private void btnRemove_click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                dataGridView1.Rows.RemoveAt(0);
-            }
-            else
-            {
-                MessageBox.Show("Selecione uma linha para remover.");
-            }
+            Listagem.ListaPessoas.RemoveAt(indicie);
+            btnRemove.Enabled = false;
+            btnEditar.Enabled = false;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dataSource();
+        }
+
+        private  void btnEdit_click(object sender, EventArgs e)
+        {           
+
+            new RegistrosForm().Show();
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {            
+
             int linhaClicada = e.RowIndex;
             indicie = linhaClicada;
+            Pessoa pessoaEncontrada = Listagem.ListaPessoas[indicie];
+            nome = pessoaEncontrada.nome;
+            email = pessoaEncontrada.email;    
+            senha = pessoaEncontrada.senha;
+
+            new RegistrosForm()
+            {
+                nome = nome,
+                senha = senha,
+                email = email,
+                edit = true
+            };
+
+            if (indicie >=0)
+            {
+                btnRemove.Enabled = true;
+                btnEditar.Enabled = true;
+            } else
+            {
+                btnRemove.Enabled = false;
+                btnEditar.Enabled = false;
+            }
             int colunaClicada = e.ColumnIndex;
-            MessageBox.Show($"linha: {linhaClicada} coluna: {colunaClicada} posicao: {indicie} rowIndex: {dataGridView1.SelectedCells[0].RowIndex}");
+            MessageBox.Show($"linha: {linhaClicada} coluna: {colunaClicada} posicao: {indicie}");
+        }
+
+        private void Listagem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

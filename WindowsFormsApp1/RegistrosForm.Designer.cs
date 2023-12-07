@@ -29,9 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.fullName = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
+            this.txtfullName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,26 +42,26 @@ namespace WindowsFormsApp1
             this.senhaWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // fullName
+            // txtfullName
             // 
-            this.fullName.Location = new System.Drawing.Point(29, 58);
-            this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(387, 20);
-            this.fullName.TabIndex = 0;
+            this.txtfullName.Location = new System.Drawing.Point(29, 58);
+            this.txtfullName.Name = "txtfullName";
+            this.txtfullName.Size = new System.Drawing.Size(387, 20);
+            this.txtfullName.TabIndex = 0;
             // 
-            // email
+            // txtEmail
             // 
-            this.email.Location = new System.Drawing.Point(29, 145);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(387, 20);
-            this.email.TabIndex = 1;
+            this.txtEmail.Location = new System.Drawing.Point(29, 145);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(387, 20);
+            this.txtEmail.TabIndex = 1;
             // 
-            // password
+            // txtPassword
             // 
-            this.password.Location = new System.Drawing.Point(29, 230);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(387, 20);
-            this.password.TabIndex = 2;
+            this.txtPassword.Location = new System.Drawing.Point(29, 230);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(387, 20);
+            this.txtPassword.TabIndex = 2;
             // 
             // button1
             // 
@@ -158,9 +158,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.email);
-            this.Controls.Add(this.fullName);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtfullName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistrosForm";
             this.ResumeLayout(false);
@@ -170,9 +170,9 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.TextBox fullName;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox txtfullName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
