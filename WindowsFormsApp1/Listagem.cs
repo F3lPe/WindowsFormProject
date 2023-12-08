@@ -32,11 +32,15 @@ namespace WindowsFormsApp1
         {
             dataGridView1.DataSource = dataSource();
         }
+        public void refresh()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dataSource();
+        }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            usuarios();
-            RegistrosForm registrosForm = new RegistrosForm();            
+            usuarios();         
         }
         private void button_back(object sender, EventArgs e)
         {

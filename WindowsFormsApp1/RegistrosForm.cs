@@ -55,6 +55,7 @@ namespace WindowsFormsApp1
                 pessoa.nome = txtfullName.Text;
                 pessoa.email = txtEmail.Text;
                 pessoa.senha = txtPassword.Text;
+                new Listagem().refresh();
                 this.Hide();
             }
         }
@@ -80,8 +81,7 @@ namespace WindowsFormsApp1
             } else
             {
                 this.Hide();
-            }
-            
+            }            
         }
 
         private void label1_Click(object sender, EventArgs e)
