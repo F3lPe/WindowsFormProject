@@ -21,9 +21,7 @@ namespace WindowsFormsApp1
         string nome, email, senha;
         RegistrosForm registrosForm = new RegistrosForm();
 
-        public static List<Pessoa> ListaPessoas { get; } = new List<Pessoa> ();
-        public bool thisVisible { get; set; } = false;
-        
+        public static List<Pessoa> ListaPessoas { get; } = new List<Pessoa> ();        
         public List<Pessoa> dataSource()
         {
             return Listagem.ListaPessoas;
@@ -32,16 +30,13 @@ namespace WindowsFormsApp1
         {
             dataGridView1.DataSource = dataSource();
         }
-        public void refresh()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dataSource();
-        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            usuarios();         
+            usuarios();
         }
+
         private void button_back(object sender, EventArgs e)
         {
             registrosForm.Close();
@@ -90,7 +85,9 @@ namespace WindowsFormsApp1
                 nome = nome,
                 senha = senha,
                 email = email,
-                edit = true
+                edit = true,
+                indicie = indicie
+               
             };
 
             registrosForm.Show();

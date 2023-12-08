@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public string senha { get; set; }
         public string email { get; set; }
         public bool edit { get; set; } = false;
+        public int indicie { get; set; }
         public RegistrosForm()
         {
             InitializeComponent();
@@ -51,12 +52,12 @@ namespace WindowsFormsApp1
                 } 
             }else if (edit == true)
             {               
-                pessoa = Listagem.ListaPessoas.Find(i => i.id == id);
+                pessoa = Listagem.ListaPessoas[indicie];
                 pessoa.nome = txtfullName.Text;
                 pessoa.email = txtEmail.Text;
                 pessoa.senha = txtPassword.Text;
-                new Listagem().refresh();
-                this.Hide();
+                
+                this.Hide();                
             }
         }
         protected override void OnLoad(EventArgs e)
