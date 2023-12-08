@@ -19,9 +19,10 @@ namespace WindowsFormsApp1
         }
         int indicie = 0;
         string nome, email, senha;
-
+        RegistrosForm registrosForm = new RegistrosForm();
 
         public static List<Pessoa> ListaPessoas { get; } = new List<Pessoa> ();
+        public bool thisVisible { get; set; } = false;
         
         public List<Pessoa> dataSource()
         {
@@ -31,15 +32,15 @@ namespace WindowsFormsApp1
         {
             dataGridView1.DataSource = dataSource();
         }
-
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            usuarios();            
+            usuarios();
+            RegistrosForm registrosForm = new RegistrosForm();            
         }
-
         private void button_back(object sender, EventArgs e)
         {
+            registrosForm.Close();
             this.Hide();
             new Menu().Show();
         }
@@ -74,29 +75,27 @@ namespace WindowsFormsApp1
         }
 
         private  void btnEdit_click(object sender, EventArgs e)
-        {           
-
-            new RegistrosForm().Show();
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {            
-
-            int linhaClicada = e.RowIndex;
-            indicie = linhaClicada;
+        {
             Pessoa pessoaEncontrada = Listagem.ListaPessoas[indicie];
             nome = pessoaEncontrada.nome;
-            email = pessoaEncontrada.email;    
+            email = pessoaEncontrada.email;
             senha = pessoaEncontrada.senha;
 
-            new RegistrosForm()
+            registrosForm = new RegistrosForm()
             {
                 nome = nome,
                 senha = senha,
                 email = email,
                 edit = true
             };
+
+            registrosForm.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int linhaClicada = e.RowIndex;
+            indicie = linhaClicada;            
 
             if (indicie >=0)
             {
@@ -107,8 +106,6 @@ namespace WindowsFormsApp1
                 btnRemove.Enabled = false;
                 btnEditar.Enabled = false;
             }
-            int colunaClicada = e.ColumnIndex;
-            MessageBox.Show($"linha: {linhaClicada} coluna: {colunaClicada} posicao: {indicie}");
         }
 
         private void Listagem_Load(object sender, EventArgs e)

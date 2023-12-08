@@ -21,10 +21,11 @@ namespace WindowsFormsApp1
             InitializeComponent();
             CenterToScreen();
         }
-        int id = 0;
+        private static int id = 0;
+        Pessoa pessoa = new Pessoa();
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {            
             if (edit == false)
             {
                 if (txtfullName.Text == "" || txtPassword.Text == "" || txtEmail.Text == "")
@@ -32,7 +33,6 @@ namespace WindowsFormsApp1
                     fullNameWarning.Visible = true;
                     senhaWarning.Visible = true;
                     emailWarning.Visible = true;
-
                 }
                 else
                 {
@@ -40,30 +40,48 @@ namespace WindowsFormsApp1
                     fullNameWarning.Visible = false;
                     senhaWarning.Visible = false;
                     emailWarning.Visible = false;
+                    id += 1;
 
-                    Pessoa pessoa = new Pessoa { nome = txtfullName.Text, senha = txtPassword.Text, email = txtEmail.Text, id = id };
+                    pessoa = new Pessoa { nome = txtfullName.Text, senha = txtPassword.Text, email = txtEmail.Text, id = id };
                     Listagem.ListaPessoas.Add(pessoa);
 
-                    id += 1;
                     txtfullName.Text = "";
                     txtPassword.Text = "";
                     txtEmail.Text = "";
-                }
-            }
-            else if (edit == true)
-            {
-                txtfullName.Text = nome;
-                txtPassword.Text = senha;
-                txtEmail.Text = email;
+                } 
+            }else if (edit == true)
+            {               
+                pessoa = Listagem.ListaPessoas.Find(i => i.id == id);
+                pessoa.nome = txtfullName.Text;
+                pessoa.email = txtEmail.Text;
+                pessoa.senha = txtPassword.Text;
                 this.Hide();
             }
-                      
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            
+            if (edit == true)
+            {                
+                txtfullName.Text = nome;
+                txtPassword.Text = senha;
+                txtEmail.Text = email;                
+            }            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Menu().Show();
+            if(edit == false)
+            {
+                this.Hide();
+                new Menu().Show();
+
+            } else
+            {
+                this.Hide();
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
