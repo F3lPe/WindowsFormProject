@@ -56,7 +56,14 @@ namespace WindowsFormsApp1
                 pessoa.nome = txtfullName.Text;
                 pessoa.email = txtEmail.Text;
                 pessoa.senha = txtPassword.Text;
+                new Listagem().RefreshData();
+                new Listagem().Show();
+
+
+                MessageBox.Show("Valores editados");
                 
+             
+
                 this.Hide();                
             }
         }
@@ -82,6 +89,7 @@ namespace WindowsFormsApp1
             } else
             {
                 this.Hide();
+                new Listagem().Show();
             }            
         }
 

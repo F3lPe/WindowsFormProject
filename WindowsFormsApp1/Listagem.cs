@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -30,6 +31,11 @@ namespace WindowsFormsApp1
         {
             dataGridView1.DataSource = dataSource();
         }
+        public void RefreshData()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dataSource();
+        }
 
         protected override void OnLoad(EventArgs e)
         {
@@ -43,7 +49,6 @@ namespace WindowsFormsApp1
             this.Hide();
             new Menu().Show();
         }
-
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
         
@@ -69,8 +74,7 @@ namespace WindowsFormsApp1
             Listagem.ListaPessoas.RemoveAt(indicie);
             btnRemove.Enabled = false;
             btnEditar.Enabled = false;
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dataSource();
+            RefreshData();
         }
 
         private  void btnEdit_click(object sender, EventArgs e)
@@ -86,18 +90,17 @@ namespace WindowsFormsApp1
                 senha = senha,
                 email = email,
                 edit = true,
-                indicie = indicie
-               
+                indicie = indicie               
             };
-
+            this.Hide();
             registrosForm.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int linhaClicada = e.RowIndex;
-            indicie = linhaClicada;            
-
+            indicie = linhaClicada;
+            Console.WriteLine("Olá mundo {0}", linhaClicada, "dawo[doad");
             if (indicie >=0)
             {
                 btnRemove.Enabled = true;
@@ -108,7 +111,6 @@ namespace WindowsFormsApp1
                 btnEditar.Enabled = false;
             }
         }
-
         private void Listagem_Load(object sender, EventArgs e)
         {
 
